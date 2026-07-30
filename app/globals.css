@@ -1,0 +1,268 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@source "../app";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "Deep Signal": near-black navy canvas, electric cyan +
+ * violet accents, glassy 3D surfaces. All colors are oklch tokens.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --font-display: var(--font-display-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans-ibm-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jetbrains), ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.16 0.028 264);
+  --foreground: oklch(0.97 0.006 250);
+  --card: oklch(0.21 0.031 264);
+  --card-foreground: oklch(0.97 0.006 250);
+  --popover: oklch(0.21 0.031 264);
+  --popover-foreground: oklch(0.97 0.006 250);
+  --primary: oklch(0.78 0.15 199);
+  --primary-foreground: oklch(0.17 0.03 264);
+  --primary-glow: oklch(0.66 0.19 268);
+  --secondary: oklch(0.27 0.038 264);
+  --secondary-foreground: oklch(0.97 0.006 250);
+  --muted: oklch(0.26 0.032 264);
+  --muted-foreground: oklch(0.72 0.026 258);
+  --accent: oklch(0.7 0.17 300);
+  --accent-foreground: oklch(0.16 0.028 264);
+  --destructive: oklch(0.63 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 250);
+  --border: oklch(0.98 0.01 250 / 12%);
+  --input: oklch(0.98 0.01 250 / 16%);
+  --ring: oklch(0.78 0.15 199 / 55%);
+  --surface: oklch(0.98 0.01 250 / 5%);
+  --surface-strong: oklch(0.98 0.01 250 / 9%);
+
+  --gradient-hero: radial-gradient(
+      120% 90% at 78% 8%,
+      color-mix(in oklab, var(--primary) 22%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      100% 80% at 6% 92%,
+      color-mix(in oklab, var(--primary-glow) 26%, transparent),
+      transparent 62%
+    );
+  --gradient-text: linear-gradient(
+    100deg,
+    var(--foreground) 8%,
+    var(--primary) 48%,
+    var(--accent) 92%
+  );
+  --gradient-line: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--primary) 60%, transparent),
+    transparent
+  );
+  --shadow-float: 0 32px 70px -28px color-mix(in oklab, var(--primary-glow) 55%, transparent);
+  --shadow-card: 0 18px 46px -26px oklch(0 0 0 / 85%);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ---------- 3D + motion utilities ---------- */
+
+@utility scene-3d {
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility text-gradient {
+  background-image: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-card);
+}
+
+@utility tilt-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.5s var(--ease-out-soft),
+    border-color 0.4s ease,
+    box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, -40px) rotateX(8deg);
+  transition:
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.9s var(--ease-out-soft);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translate3d(0, -10px, 0);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ring {
+  0% {
+    transform: rotateX(72deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(72deg) rotateZ(360deg);
+  }
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(4%, -6%, 0) scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@utility animate-float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@utility animate-orbit {
+  animation: orbit-ring 22s linear infinite;
+}
+
+@utility animate-aurora {
+  animation: aurora 16s ease-in-out infinite;
+}
+
+@utility animate-marquee {
+  animation: marquee-x 32s linear infinite;
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 26s linear infinite;
+}
+
+@utility animate-pulse-ring {
+  animation: pulse-ring 2.8s ease-out infinite;
+}
