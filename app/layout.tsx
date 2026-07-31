@@ -27,26 +27,6 @@ const title = "Abubakar Usman — Full-Stack SaaS & AI Developer";
 const description =
   "Portfolio of Abubakar Usman, Computer Science student at NUTECH Islamabad building multi-tenant SaaS platforms, live AI products and security tooling.";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://residentx.vercel.app"),
-  title,
-  description,
-  authors: [{ name: "Abubakar Usman" }],
-  alternates: { canonical: "/" },
-  icons: { icon: "/favicon.ico" },
-  openGraph: {
-    title,
-    description,
-    type: "profile",
-    url: "https://residentx.vercel.app/",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,

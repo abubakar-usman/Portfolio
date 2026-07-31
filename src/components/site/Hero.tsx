@@ -4,10 +4,6 @@ import { useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import { marqueeSkills, profile } from "@/lib/profile";
 
-// NOTE: the original Lovable project referenced a hosted image via an
-// asset JSON pointer that only resolves inside Lovable's editor. Drop your
-// own portrait image at /public/portrait.png (or update this path) so it
-// renders in this Next.js app.
 const portraitSrc = "/Me.jpg";
 
 const floatingChips: { label: string; position: React.CSSProperties; delay: string }[] = [
@@ -78,7 +74,6 @@ export function Hero() {
               style={{ boxShadow: "var(--shadow-float)" }}
             >
               <span className="relative z-10">View my work</span>
-              <span className="absolute inset-0 -translate-x-full bg-accent transition-transform duration-500 group-hover:translate-x-0" />
             </a>
             <a
               href={`mailto:${profile.email}`}

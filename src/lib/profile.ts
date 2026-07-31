@@ -20,7 +20,6 @@ export const profile = {
   phoneHref: "+923090003841",
   linkedin: "https://linkedin.com/in/abubakar-usman-654808400",
   github: "https://github.com/abubakar-usman",
-  website: "https://residentx.vercel.app",
   summary:
     "Dynamic Computer Science student at NUTECH, Islamabad, and Full-Stack Web Developer. Dedicated to learning by building real software under practical constraints rather than relying solely on lecture slides. Skilled across multi-tenant SaaS architectures, live production platforms, databases, security tooling, automata theory, and AI integrations (LLMs & Voice AI).",
   stats: [
@@ -85,7 +84,7 @@ export const experience = [
     company: "Elite Filing",
     period: "June 2026 — Present",
     points: [
-      "Deliver production-ready landing pages for a portfolio of US-based dental and medical clinic clients, owning each project end-to-end from requirements synthesis to deployment.",
+      "Deliver production-ready landing pages for US-based dental and medical clinic clients, owning each project end-to-end from requirements synthesis to deployment.",
       "Built and actively maintain the official marketing platform for Operant Labs (an AI transformation advisory firm) using Next.js and Tailwind CSS, featuring capability showcases, case studies, and interactive contact systems.",
     ],
   },
@@ -101,6 +100,23 @@ export const experience = [
 
 export const projects: Project[] = [
   {
+    name: "Operant Labs",
+    tagline: "Core data structures engine",
+    points: [
+      "Frontend-Ongong project",
+      "Operant Labs is an AI transformation and engineering company that helps enterprises, investors, and growth stage organizations move from AI strategy to enterprise execution. It combines technical due diligence, AI solution architecture, automation, and forward deployed engineering to design, implement, and optimize scalable AI systems that deliver measurable business value while supporting long term governance and operational excellence.",
+    ],
+    stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
+  },
+  {
+    name: "Elite-Filing",
+    tagline: "Core data structures engine",
+    points: [
+       "Frontend-Ongong project",
+      " Elite-Filing focuses on building a fully automated business formation and compliance platform for Elite Filing. It streamlines the entire client journey, from AI powered consultation and KYC verification to payment processing, government submissions, document delivery, and annual compliance reminders. The platform combines modern web technologies, workflow automation, and AI to reduce manual work, improve accuracy, and deliver a seamless experience for both clients and administrators.",
+    ],
+    stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
+  },{
     name: "SolarPro Pakistan",
     tagline: "Flagship multi-tenant SaaS platform",
     points: [

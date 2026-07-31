@@ -6,7 +6,6 @@ const channels = [
   { label: "WhatsApp / Call", value: profile.phone, href: `tel:${profile.phoneHref}` },
   { label: "LinkedIn", value: "abubakar-usman", href: profile.linkedin },
   { label: "GitHub", value: "abubakar-usman", href: profile.github },
-  { label: "Portfolio", value: "residentx.vercel.app", href: profile.website },
 ];
 
 export function Contact() {
@@ -30,10 +29,14 @@ export function Contact() {
             </p>
             <a
               href={`mailto:${profile.email}`}
-              className="mt-7 inline-flex rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
+              className="group relative mt-7 inline-flex rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
               style={{ boxShadow: "var(--shadow-float)" }}
             >
-              Start a conversation
+              <span
+                className="animate-pulse-ring pointer-events-none absolute inset-0 rounded-full bg-primary"
+                aria-hidden
+              />
+              <span className="relative">Start a conversation</span>
             </a>
           </div>
 
