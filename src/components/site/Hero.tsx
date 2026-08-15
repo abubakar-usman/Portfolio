@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import { marqueeSkills, profile } from "@/lib/profile";
 
-const portraitSrc = "/Me.jpg";
+const portraitSrc = "/logo.png";
 
 const floatingChips: { label: string; position: React.CSSProperties; delay: string }[] = [
   { label: "Next.js 14", position: { left: "-8%", top: "16%" }, delay: "-1.5s" },

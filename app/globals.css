@@ -11,45 +11,45 @@
   /* Border Radii */
   --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
-  --radius-lg: 0.5rem; /* Matches your professional theme */
+  --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
 
-  /* Professional "Deep Signal" Color Palette (OKLCH) */
-  --color-background: oklch(0.12 0.015 250);
-  --color-foreground: oklch(0.98 0.005 250);
+  /* Animated Crimson & Obsidian Black Theme (OKLCH) */
+  --color-background: oklch(0.08 0.005 25);         /* Deep obsidian black */
+  --color-foreground: oklch(0.98 0.005 25);         /* Crisp off-white */
   
-  --color-card: oklch(0.15 0.02 250);
-  --color-card-foreground: oklch(0.98 0.005 250);
+  --color-card: oklch(0.12 0.015 25);               /* Elevated dark charcoal */
+  --color-card-foreground: oklch(0.98 0.005 25);
   
-  --color-popover: oklch(0.15 0.02 250);
-  --color-popover-foreground: oklch(0.98 0.005 250);
+  --color-popover: oklch(0.12 0.015 25);
+  --color-popover-foreground: oklch(0.98 0.005 25);
   
-  --color-primary: oklch(0.65 0.2 250); 
-  --color-primary-foreground: oklch(0.98 0.01 250);
-  --color-primary-glow: oklch(0.55 0.25 250 / 40%);
+  --color-primary: oklch(0.58 0.26 25);             /* Vivid Neon Crimson */
+  --color-primary-foreground: oklch(0.98 0.005 25);
+  --color-primary-glow: oklch(0.55 0.28 25 / 50%);  /* Crimson Glow */
   
-  --color-secondary: oklch(0.25 0.02 250);
-  --color-secondary-foreground: oklch(0.98 0.005 250);
+  --color-secondary: oklch(0.18 0.02 25);           /* Dark Onyx */
+  --color-secondary-foreground: oklch(0.98 0.005 25);
   
-  --color-muted: oklch(0.22 0.02 250);
-  --color-muted-foreground: oklch(0.7 0.01 250);
+  --color-muted: oklch(0.16 0.015 25);              /* Muted Dark Surface */
+  --color-muted-foreground: oklch(0.65 0.02 25);
 
-  --color-accent: oklch(0.85 0.12 170); 
-  --color-accent-foreground: oklch(0.12 0.015 250);
+  --color-accent: oklch(0.65 0.27 35);              /* Glowing Red-Orange / Coral Flame */
+  --color-accent-foreground: oklch(0.08 0.005 25);
   
-  --color-destructive: oklch(0.6 0.18 25);
-  --color-destructive-foreground: oklch(0.98 0.005 250);
+  --color-destructive: oklch(0.45 0.22 25);         /* Blood Red */
+  --color-destructive-foreground: oklch(0.98 0.005 25);
   
-  --color-border: oklch(1 0 0 / 10%);
+  --color-border: oklch(0.58 0.26 25 / 22%);        /* Tinted red border */
   --color-input: oklch(1 0 0 / 12%);
-  --color-ring: oklch(0.65 0.2 250 / 50%);
+  --color-ring: oklch(0.58 0.26 25 / 60%);
   
-  --color-surface: oklch(1 0 0 / 4%);
-  --color-surface-strong: oklch(1 0 0 / 8%);
+  --color-surface: oklch(0.12 0.015 25 / 60%);
+  --color-surface-strong: oklch(0.18 0.02 25 / 80%);
 
-  /* Fonts - mapped to CSS variables (Ensure these are loaded in your Layout) */
+  /* Fonts - mapped to CSS variables */
   --font-display: var(--font-display-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-sans-ibm-plex), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono-jetbrains), ui-monospace, monospace;
@@ -77,14 +77,22 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    background: oklch(0.58 0.26 25 / 45%);
+    color: oklch(0.98 0.005 25);
   }
 }
 
-/* ---------- Professional Utilities ---------- */
+/* ---------- Black & Red Animated Utilities ---------- */
 
 @utility text-gradient {
-  background: linear-gradient(100deg, var(--color-foreground) 10%, var(--color-primary) 50%, var(--color-accent) 95%);
+  background: linear-gradient(110deg, #ffffff 10%, var(--color-primary) 50%, var(--color-accent) 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-fire {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 50%, oklch(0.35 0.2 25) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -92,9 +100,17 @@
 
 @utility glass-panel {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 18px 46px -26px oklch(0 0 0 / 90%);
+  border: 1px solid oklch(0.58 0.26 25 / 25%);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px -10px oklch(0 0 0 / 90%), 0 0 20px -5px oklch(0.58 0.26 25 / 15%);
+}
+
+@utility red-glow-sm {
+  box-shadow: 0 0 15px -3px oklch(0.58 0.26 25 / 40%);
+}
+
+@utility red-glow-lg {
+  box-shadow: 0 0 35px -5px oklch(0.58 0.26 25 / 60%), 0 0 15px -2px oklch(0.65 0.27 35 / 30%);
 }
 
 @utility scene-3d {
@@ -111,16 +127,34 @@
   will-change: transform;
 }
 
-/* Animations */
+/* ---------- Animations ---------- */
+
 @keyframes float-y {
   0%, 100% { transform: translate3d(0, -10px, 0); }
   50% { transform: translate3d(0, 12px, 0); }
 }
 
 @keyframes pulse-ring {
-  0% { opacity: 0.7; transform: scale(0.9); }
-  70% { opacity: 0; transform: scale(1.35); }
-  100% { opacity: 0; transform: scale(1.35); }
+  0% { opacity: 0.8; transform: scale(0.9); box-shadow: 0 0 0 0 oklch(0.58 0.26 25 / 70%); }
+  70% { opacity: 0; transform: scale(1.4); box-shadow: 0 0 20px 10px oklch(0.58 0.26 25 / 0%); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+@keyframes red-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px oklch(0.58 0.26 25 / 30%), 0 0 30px oklch(0.58 0.26 25 / 15%);
+    border-color: oklch(0.58 0.26 25 / 40%);
+  }
+  50% {
+    box-shadow: 0 0 25px oklch(0.58 0.26 25 / 70%), 0 0 50px oklch(0.65 0.27 35 / 35%);
+    border-color: oklch(0.65 0.27 35 / 80%);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @utility animate-float {
@@ -131,9 +165,19 @@
   animation: pulse-ring 2.8s ease-out infinite;
 }
 
-/* Hero Gradient Background */
+@utility animate-red-glow {
+  animation: red-glow-pulse 3s ease-in-out infinite;
+}
+
+@utility animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Hero Gradient Background (Obsidian Black & Crimson Glow) */
 @utility bg-hero-gradient {
   background: 
-    radial-gradient(120% 90% at 78% 8%, color-mix(in oklab, var(--color-primary) 15%, transparent), transparent 60%),
-    radial-gradient(100% 80% at 6% 92%, color-mix(in oklab, var(--color-accent) 15%, transparent), transparent 62%);
+    radial-gradient(120% 90% at 78% 8%, oklch(0.58 0.26 25 / 22%), transparent 60%),
+    radial-gradient(100% 80% at 6% 92%, oklch(0.65 0.27 35 / 18%), transparent 62%),
+    radial-gradient(60% 60% at 50% 50%, oklch(0.12 0.015 25), oklch(0.08 0.005 25));
 }
