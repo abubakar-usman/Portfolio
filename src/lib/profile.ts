@@ -107,23 +107,7 @@ export const projects: Project[] = [
       "Operant Labs is an AI transformation and engineering company that helps enterprises, investors, and growth stage organizations move from AI strategy to enterprise execution. It combines technical due diligence, AI solution architecture, automation, and forward deployed engineering to design, implement, and optimize scalable AI systems that deliver measurable business value while supporting long term governance and operational excellence.",
     ],
     stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
-  },
-  {
-    name: "Elite-Filing",
-    tagline: "Core data structures engine",
-    points: [
-       "Frontend-Ongong project",
-      " Elite-Filing focuses on building a fully automated business formation and compliance platform for Elite Filing. It streamlines the entire client journey, from AI powered consultation and KYC verification to payment processing, government submissions, document delivery, and annual compliance reminders. The platform combines modern web technologies, workflow automation, and AI to reduce manual work, improve accuracy, and deliver a seamless experience for both clients and administrators.",
-    ],
-    stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
-  },{
-    name: "SolarPro Pakistan",
-    tagline: "Flagship multi-tenant SaaS platform",
-    points: [
-      "Full-stack project management platform for solar installation companies with organization-scoped data isolation and role-based access control.",
-      "Custom manual JWT callback system resolving OAuth/credentials conflicts, Google OAuth via NextAuth, dynamic survey forms and Cloudinary image workflows.",
-    ],
-    stack: ["Next.js 14", "TypeScript", "Prisma ORM", "PostgreSQL", "NextAuth", "shadcn/ui"],
+    live: "https://operantlabs.io",
   },
   {
     name: "CognivioAI",
@@ -136,6 +120,23 @@ export const projects: Project[] = [
     live: "https://cognivioai.app",
   },
   {
+    name: "Elite-Filing",
+    tagline: "Core data structures engine",
+    points: [
+      "Frontend-Ongong project",
+      " Elite-Filing focuses on building a fully automated business formation and compliance platform for Elite Filing. It streamlines the entire client journey, from AI powered consultation and KYC verification to payment processing, government submissions, document delivery, and annual compliance reminders. The platform combines modern web technologies, workflow automation, and AI to reduce manual work, improve accuracy, and deliver a seamless experience for both clients and administrators.",
+    ],
+    stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
+  }, {
+    name: "SolarPro Pakistan",
+    tagline: "Flagship multi-tenant SaaS platform",
+    points: [
+      "Full-stack project management platform for solar installation companies with organization-scoped data isolation and role-based access control.",
+      "Custom manual JWT callback system resolving OAuth/credentials conflicts, Google OAuth via NextAuth, dynamic survey forms and Cloudinary image workflows.",
+    ],
+    stack: ["Next.js 14", "TypeScript", "Prisma ORM", "PostgreSQL", "NextAuth", "shadcn/ui"],
+  },
+  {
     name: "ThreatScope",
     tagline: "Security & malware analysis system",
     points: [
@@ -143,14 +144,6 @@ export const projects: Project[] = [
       "Real-time Java Swing GUI presenting severity levels, detailed scan logs and security verification output.",
     ],
     stack: ["Java", "VirusTotal API", "Java Swing", "Malware Detection"],
-  },
-  {
-    name: "AI Learning App",
-    tagline: "ICAT 2026 coursework project",
-    points: [
-      "Adaptive AI learning application exploring dynamic study interfaces on a modern Next.js and React architecture.",
-    ],
-    stack: ["Next.js", "React", "JavaScript", "AI Interface"],
   },
   {
     name: "Loan Approval System",

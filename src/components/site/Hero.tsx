@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import { marqueeSkills, profile } from "@/lib/profile";
@@ -156,18 +156,35 @@ export function Hero() {
       </div>
 
       {/* Tech marquee */}
-      <div className="relative mt-20 overflow-hidden border-y border-border/70 py-4">
-        <div className="animate-marquee flex w-max gap-10 whitespace-nowrap">
-          {[...marqueeSkills, ...marqueeSkills].map((skill, index) => (
+      <div className="relative mt-20 overflow-hidden border-y border-border/70 py-6">
+        <motion.div
+          className="flex whitespace-nowrap"
+          animate={{
+            x: ["0%", "-50%"], // Moves from start to halfway (since we doubled the array)
+          }}
+          transition={{
+            duration: 25, // Adjust this number to change speed (higher = slower)
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          // Optional: Pauses the marquee when you hover over it
+          whileHover={{ animationPlayState: "paused" }}
+        >
+          {/* We duplicate the skills multiple times to ensure a seamless loop */}
+          {[...marqueeSkills, ...marqueeSkills, ...marqueeSkills, ...marqueeSkills].map((skill, index) => (
             <span
               key={`${skill}-${index}`}
-              className="font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground"
+              className="flex items-center px-10 font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground"
             >
               {skill}
               <span className="ml-10 text-primary">/</span>
             </span>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Optional: Add a fade effect on the left and right edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
       </div>
     </section>
   );

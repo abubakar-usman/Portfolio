@@ -60,10 +60,6 @@ export function Contact() {
         </div>
       </div>
 
-      <footer className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row">
-        <p>© {new Date().getFullYear()} Abubakar Usman. All rights reserved.</p>
-        <p className="font-mono uppercase tracking-[0.2em]">Built with Next-level attention</p>
-      </footer>
     </Section>
   );
 }
