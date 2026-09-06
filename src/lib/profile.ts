@@ -103,7 +103,6 @@ export const projects: Project[] = [
     name: "Operant Labs",
     tagline: "Core data structures engine",
     points: [
-      "Frontend-Ongong project",
       "Operant Labs is an AI transformation and engineering company that helps enterprises, investors, and growth stage organizations move from AI strategy to enterprise execution. It combines technical due diligence, AI solution architecture, automation, and forward deployed engineering to design, implement, and optimize scalable AI systems that deliver measurable business value while supporting long term governance and operational excellence.",
     ],
     stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
@@ -127,7 +126,19 @@ export const projects: Project[] = [
       " Elite-Filing focuses on building a fully automated business formation and compliance platform for Elite Filing. It streamlines the entire client journey, from AI powered consultation and KYC verification to payment processing, government submissions, document delivery, and annual compliance reminders. The platform combines modern web technologies, workflow automation, and AI to reduce manual work, improve accuracy, and deliver a seamless experience for both clients and administrators.",
     ],
     stack: ["Next.js", "React", "Talwind CSS", "Framer Motion", "Stack CP"],
-  }, {
+    live: "https://elitefiling.netlify.app/",
+
+  },
+  {
+    name: "Watch Club",
+    tagline: "Automated decision engine",
+    points: [
+      "Contributed to WatchClub, a Netflix-style movie and series platform built with Next.js, React, TypeScript, and Tailwind CSS. Developed the backend using Drizzle ORM and PostgreSQL (Supabase), integrated Better Auth and Streaming Availability API, and implemented database schemas and RLS policies for watchlists, comments, reactions, and community features.",
+    ],
+    stack: ["NextJS", "Drizzle ORM", "Tailwind CSS", "Prisma", "PostgreSQL", "Better Auth"],
+    live: "https://watchclub.netlify.app/",
+  },
+  {
     name: "SolarPro Pakistan",
     tagline: "Flagship multi-tenant SaaS platform",
     points: [
@@ -161,4 +172,5 @@ export const projects: Project[] = [
     ],
     stack: ["C++", "Data Structures", "Algorithms"],
   },
+
 ];
