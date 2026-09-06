@@ -136,7 +136,7 @@ export const projects: Project[] = [
       "Contributed to WatchClub, a Netflix-style movie and series platform built with Next.js, React, TypeScript, and Tailwind CSS. Developed the backend using Drizzle ORM and PostgreSQL (Supabase), integrated Better Auth and Streaming Availability API, and implemented database schemas and RLS policies for watchlists, comments, reactions, and community features.",
     ],
     stack: ["NextJS", "Drizzle ORM", "Tailwind CSS", "Prisma", "PostgreSQL", "Better Auth"],
-    live: "https://watchclub.netlify.app/",
+    live: "https://watch-club-alpha.vercel.app/",
   },
   {
     name: "SolarPro Pakistan",
