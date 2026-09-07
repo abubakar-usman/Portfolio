@@ -80,12 +80,21 @@ export const skillGroups: SkillGroup[] = [
 
 export const experience = [
   {
-    role: "Web Development Intern",
+    role: "Full Stack Engineer",
     company: "Elite Filing",
-    period: "June 2026 — Present",
+    period: "July 2026 — September 2026",
     points: [
       "Deliver production-ready landing pages for US-based dental and medical clinic clients, owning each project end-to-end from requirements synthesis to deployment.",
       "Built and actively maintain the official marketing platform for Operant Labs (an AI transformation advisory firm) using Next.js and Tailwind CSS, featuring capability showcases, case studies, and interactive contact systems.",
+    ],
+  },
+  {
+    role: "Full Stack Developer Intern",
+    company: "Sarmaaya Financials",
+    period: "August 2025 — September 2026",
+    points: [
+      "Contributed to WatchClub, a Netflix-style movie and series platform built with Next.js, React, TypeScript, and Tailwind CSS.",
+      "Developed the backend using Drizzle ORM and PostgreSQL (Supabase), integrated Better Auth and Streaming Availability API, and implemented database schemas and RLS policies for watchlists, comments, reactions, and community features.",
     ],
   },
   {
